@@ -1,9 +1,8 @@
-import { MaterialService } from './../../shared/classes/material.service';
+import { MaterialService } from '../../shared/classes/material.service';
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../shared/interfaces';
 import { ContactService } from '../../shared/services/contact.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -14,8 +13,7 @@ export class ContactComponent implements OnInit {
   contact: Contact;
   contacts: Contact[] = [];
   form: FormGroup;
-  constructor(public contactService: ContactService,
-              private router: Router) { }
+  constructor(public contactService: ContactService) { }
 
   ngOnInit() {
     this.initForm();
@@ -38,7 +36,6 @@ export class ContactComponent implements OnInit {
       .getContacts()
       .subscribe(data => {
         this.contacts = data;
-        console.log(this.contacts);
       });
   }
 
@@ -55,7 +52,8 @@ export class ContactComponent implements OnInit {
       .subscribe(res => {
         MaterialService.toast(res.message);
       });
+
     this.form.reset();
-    this.router.navigate(['/home']);
+    MaterialService.toast('Повідомлення успішно відправлено!');
   }
 }
