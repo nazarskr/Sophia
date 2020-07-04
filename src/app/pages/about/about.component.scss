@@ -1,0 +1,49 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+#about {
+    @include flexColumnCenter;
+    padding: 30px 5% 0;
+    img {
+        width: 500px;
+    }
+    #bio {
+        padding: 0 10% 50px;
+        line-height: 2em;
+        text-align: center;
+    }
+}
+@media (max-width: 550px) {
+    #about {
+        padding: 0 5%;
+        img {
+            width: 400px;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
+@media (max-width: 450px) {
+    #about {
+        img {
+            width: 300px;
+        }
+    }
+}
+@media (max-width: 350px) {
+    #about {
+        img {
+            width: 250px;
+        }
+    }
+}
+@media (max-height: 500px) {
+    #about {
+        img {
+            width: 300px;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}

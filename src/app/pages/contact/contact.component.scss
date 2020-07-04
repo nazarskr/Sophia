@@ -1,0 +1,61 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+#contact {
+    @include flexColumnCenter;
+    width: 70%;
+    margin: 0 auto;
+    form {
+        width: 50%;
+        margin: 50px 0;
+        div {
+            button {
+                font-family: $head-font;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+                background: transparent;
+                box-shadow: none;
+                border: 1px solid black;
+                border-radius: 10px;
+                color: black;
+                &:hover {
+                    background-color: $main-color;
+                    transition: all .3s;
+                }
+            }
+            .input-field {
+                input[type=text]:focus, 
+                input[type=email]:focus,
+                .materialize-textarea:focus:not([readonly]) {
+                    border-bottom: 1px solid black;
+                    box-shadow: none;
+                }
+                label, .helper-text {
+                    font-family: $head-font;
+                    letter-spacing: .5px;
+                    font-size: 1.5rem;
+                }
+                input[type=text]:focus+label, 
+                input[type=email]:focus+label,
+                .materialize-textarea:focus:not([readonly])+label {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 700px) {
+    #contact {
+        form {
+            width: 75%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #contact {
+        form {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}

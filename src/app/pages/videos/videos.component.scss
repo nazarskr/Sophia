@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+#videos {
+    #videosInner {
+        @include flexRowCenter;
+        flex-wrap: wrap;
+        margin: 2% 5%;
+        .video {
+            @include flexColumnCenter;
+            width: 300px;
+            height: 280px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            &:hover {
+                background-color: $main-color;
+                transition: all .4s;
+                img {
+                    filter: invert(100%);
+                    transform: scale(1.2);
+                    transition: all .4s;
+                }
+                p {
+                    color: white;
+                }
+            }
+            img {
+                width: 90px;
+            }
+            p {
+                font-family: $head-font;
+                font-size: 1.5em;
+                text-align: center;
+                margin-top: 15px;
+                letter-spacing: .5px;
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    #videos {
+        #videosInner {
+            margin: 3%;
+        }
+    }
+}

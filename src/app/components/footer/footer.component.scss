@@ -1,0 +1,63 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+hr {
+    width: 50%;
+    margin: 0 auto;
+}
+footer {
+    @include flexColumnBetween;
+    height: 100%;
+    padding: 15px 0;
+    h2 {
+        font-size: 2.5rem;
+        padding: 10px 0;
+        margin: 0;
+    }
+    #social {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 0 15px;
+        a {
+            img {
+                width: 32px;
+                height: 32px;
+                transition: transform .3s;
+                &:hover {
+                    transform: scale(1.2);
+                    transition: transform .3s;
+                }
+            }
+        }
+    }
+    #developer {
+        font-family: $head-font;
+        font-size: 1rem;
+        a {
+            @include linkAnimation;
+        }
+    }
+}
+
+@media (max-width: 670px) {
+    footer {
+        #social {
+            width: 150px;
+            a {
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    footer {
+        padding: 25px 0;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}

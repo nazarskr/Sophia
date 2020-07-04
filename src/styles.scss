@@ -1,0 +1,23 @@
+@import './app/styles/variables.scss';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, main {
+    font-family: $main-font;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+    font-family: $head-font;
+    text-align: center;
+}
+
+a {
+    color: black;
+    &:hover {
+        cursor: pointer;
+    }
+}
+

@@ -1,0 +1,10 @@
+<div id="videos">
+    <h2>Відео</h2>
+    <div id="videosInner">
+        <div class="video" *ngFor="let video of videos" (click)="showVideo(video)">
+            <img src="../../../assets/images/youtube-video.png" alt="video player" srcset="">
+            <p>{{video.title}}</p>
+        </div>
+    </div>
+</div>
+<app-embed-video></app-embed-video>

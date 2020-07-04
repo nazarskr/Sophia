@@ -1,0 +1,68 @@
+@import '../styles/variables.scss';
+@mixin flexRowCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexRowBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flexRowAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@mixin flexColumnCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexColumnBetween {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin linkAnimation {
+    position: relative;
+    display: inline-block;
+    padding: 0 3px;
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 0;
+        width: 0;
+        height: 1.4em;
+        border-radius: 10px;
+        background-color: $main-color;
+    }
+    &:hover {
+        &::after {
+            width: 100%;
+            transition: width .3s;
+        }
+    }
+}
+@mixin activeLink {
+    position: relative;
+    display: inline-block;
+    padding: 0 3px;
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 1.4em;
+        border-radius: 10px;
+        background-color: $main-color;
+    }
+}
