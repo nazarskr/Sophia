@@ -48,10 +48,7 @@ export class ContactComponent implements OnInit {
       email: this.form.value.email,
       message: this.form.value.message
     };
-    await this.contactService.addContact(contact)
-      .subscribe(res => {
-        MaterialService.toast(res.message);
-      });
+    await this.contactService.addContact(contact);
 
     this.form.reset();
     MaterialService.toast('Повідомлення успішно відправлено!');
