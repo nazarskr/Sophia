@@ -10,3 +10,16 @@ export interface Video {
     title: string;
     url: string;
 }
+
+export interface Lesson {
+  _id?: any;
+  name: string;
+  time: Date;
+  completed: boolean;
+}
+
+export interface Workhour {
+  _id?: any;
+  booked: boolean;
+  possible: boolean;
+}
