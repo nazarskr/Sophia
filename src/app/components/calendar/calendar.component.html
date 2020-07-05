@@ -1,0 +1,33 @@
+<div id="calendar">
+  <div class="calendar-header">
+    <div class="month-navigation">
+      <i class="material-icons">keyboard_arrow_left</i>
+      <span>Month name</span>
+      <i class="material-icons">date_range</i>
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  </div>
+  <div class="calendar-body">
+    <div class="calendar-row" *ngFor="let week of weeks">
+      <div
+          class="calendar-cell modal-trigger"
+          data-target="day-modal"
+          *ngFor="let day of days"
+          (click)="openModal(day)">
+        {{day}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal-->
+<div id="day-modal" class="modal" #dayModal>
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>Modal value: {{modalValue}}</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn">Відмінити</button>
+    <button class="btn">Зберегти</button>
+  </div>
+</div>
