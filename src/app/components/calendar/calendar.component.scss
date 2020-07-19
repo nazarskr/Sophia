@@ -1,37 +1,61 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 #calendar {
   @include flexColumnCenter();
   padding: 30px 0 50px;
 
-  .calendar-header {
-    .month-navigation {
+  .calendar-navigation {
+    .month-button {
       display: flex;
       align-items: center;
-      span {
+      padding-top: 25px;
+      .current-month {
         display: inline-block;
+        font-size: 20px;
         line-height: 30px;
         padding-right: 5px;
-        text-transform: uppercase;
+        font-family: $head-font;
+        font-weight: bold;
+      }
+      .change-date {
+        cursor: pointer;
+        font-size: 35px;
       }
     }
   }
 
   .calendar-body {
-    .calendar-row {
-      @include flexRowCenter();
+    width: 770px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .calendar-week {
+      width: 100px;
+      margin: 5px;
+      padding: 5px;
+      font-family: $head-font;
+      font-size: 20px;
+      text-align: center;
+      &.red-text {
+        color: red;
+      }
+    }
+    .calendar-cell {
+      width: 100px;
+      height: 70px;
+      margin: 5px;
+      padding: 5px;
+      font-family: $head-font;
+      font-size: 20px;
+      font-weight: bold;
+      border: 1px solid grey;
+      border-radius: 10px;
 
-      .calendar-cell {
-        width: 100px;
-        height: 70px;
-        margin: 5px;
-        padding: 5px;
-        font-family: $head-font;
-        font-size: 30px;
-        font-weight: bold;
-        border: 1px solid grey;
-        border-radius: 10px;
+      &.non-active-cell {
+        opacity: 0.4;
+      }
+      &.active-cell {
         &:hover {
           background: $main-color;
           cursor: pointer;

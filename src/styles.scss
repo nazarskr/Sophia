@@ -1,27 +1,46 @@
-@import './app/styles/variables.scss';
+@import "./app/styles/variables.scss";
+@import "./app/styles/mixins.scss";
+
+//general
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header, footer, main {
-    font-family: $main-font;
+header,
+footer,
+main {
+  font-family: $main-font;
 }
 
-h1, h2, h3, h4, h5, h6, header {
-    font-family: $head-font;
-    text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header {
+  font-family: $head-font;
+  text-align: center;
 }
 
 a {
-    color: black;
-    &:hover {
-        cursor: pointer;
-    }
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-input, textarea {
+input,
+textarea {
   font-family: $head-font;
 }
 
+//buttons
+.cancel-btn {
+  @include customButton(black, $red);
+}
+.save-btn {
+  @include customButton(black, $green);
+}

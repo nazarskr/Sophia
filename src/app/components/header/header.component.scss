@@ -1,76 +1,78 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 header {
-    nav {
-        background: none;
+  nav {
+    background: none;
+    box-shadow: none;
+  }
+  #burger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    i {
+      color: black;
+    }
+  }
+  #nav-mobile {
+    margin: 0 auto;
+    width: 50%;
+    @include flexRowBetween;
+    li {
+      a {
+        @include linkAnimation;
+        font-size: 1.5rem;
+        color: black;
         box-shadow: none;
-    }
-    #burger {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        i {
-            color: black;
+        &:hover {
+          background: none;
         }
+      }
+      .active-link {
+        @include activeLink;
+      }
     }
-    #nav-mobile {
-        margin: 0 auto;
-        width: 50%;
-        @include flexRowBetween;
-        li {
-            a {
-                @include linkAnimation;
-                font-size: 1.5rem;
-                color: black;
-                box-shadow: none;
-                &:hover {
-                    background: none;
-                }
-            }
-            .active-link {
-                @include activeLink;
-            }
-        }
+  }
+  #mobile-demo {
+    padding-top: 50px;
+    li {
+      a {
+        font-size: 2rem;
+      }
     }
-    #mobile-demo {
-        padding-top: 50px;
-        li {
-            a {
-                font-size: 2rem;
-            }
-        }
-    }
+  }
+  .divider {
+    @include customDivider(600px);
+  }
 }
 @media (max-width: 700px) {
-    header {
-        .nav-extended {
-            .nav-wrapper {
-                #nav-mobile {
-                    width: 70%;
-                    li {
-                        a {
-                            font-size: 1.2rem;
-                        }
-                    }
-                }
+  header {
+    .nav-extended {
+      .nav-wrapper {
+        #nav-mobile {
+          width: 70%;
+          li {
+            a {
+              font-size: 1.2rem;
             }
+          }
         }
+      }
     }
+  }
 }
 @media (min-width: 500px) {
-    #burger {
-        display: none;
-    }
+  #burger {
+    display: none;
+  }
 }
 @media (max-width: 499px) {
-    header {
-        .nav-extended {
-            .nav-wrapper {
-                #nav-mobile {
-                    display: none;
-                }
-            }
+  header {
+    .nav-extended {
+      .nav-wrapper {
+        #nav-mobile {
+          display: none;
         }
+      }
     }
+  }
 }
-
