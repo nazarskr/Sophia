@@ -1,4 +1,16 @@
 <div id="calendar">
+  <div class="calendar-navigation">
+    <div class="month-button">
+      <i class="material-icons change-date" (click)="minusMonth()"
+      >keyboard_arrow_left</i
+      >
+      <span class="current-month">{{ currentMonth.format("MM, YYYY") }}</span>
+      <i class="material-icons">date_range</i>
+      <i class="material-icons change-date" (click)="plusMonth()"
+      >keyboard_arrow_right</i
+      >
+    </div>
+  </div>
   <div class="calendar-body">
     <div
       class="calendar-week"
@@ -10,10 +22,8 @@
     <div
       class="calendar-cell"
       [ngClass]="
-        day.month() !== currentMonth.month()
-          ? 'non-active-cell'
-          : 'active-cell modal-trigger'
-      "
+      day.month() !== currentMonth.month() ? 'non-active-cell' :
+      (day.format('dddd') === 'Sunday' ? 'sunday' : 'active-cell modal-trigger')"
       data-target="day-modal"
       *ngFor="let day of monthDays"
       (click)="openModal(day)"
@@ -21,29 +31,28 @@
       {{ day.format("DD") }}
     </div>
   </div>
-
-  <div class="calendar-navigation">
-    <div class="month-button">
-      <i class="material-icons change-date" (click)="minusMonth()"
-        >keyboard_arrow_left</i
-      >
-      <span class="current-month">{{ currentMonth.format("MM, YYYY") }}</span>
-      <i class="material-icons">date_range</i>
-      <i class="material-icons change-date" (click)="plusMonth()"
-        >keyboard_arrow_right</i
-      >
-    </div>
-  </div>
 </div>
 
 <!--Modal-->
 <div id="day-modal" class="modal" #dayModal>
-  <div class="modal-content">
-    <h4>Запланувати урок</h4>
-    <div style="height: 100px;">Тут мають бути поля</div>
-  </div>
-  <div class="modal-footer">
-    <button class="btn cancel-btn" (click)="closeModal()">Відмінити</button>
-    <button class="btn save-btn">Зберегти</button>
-  </div>
+    <div class="modal-content">
+      <h4>Запланувати урок</h4>
+<!--      <div class="row">-->
+<!--        <div class="input-field">-->
+<!--          <input id="name" formControlName="name" type="text" class="validate" required>-->
+<!--          <label for="name">Ім'я</label>-->
+<!--          <span class="helper-text" data-error="Це поле обов'язкове" data-success="+"></span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="input-field">-->
+<!--          <input id="email" type="email" formControlName="email">-->
+<!--          <label for="email">Email</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="modal-footer">
+      <button class="btn cancel-btn" (click)="closeModal()" type="submit">Відмінити</button>
+      <button class="btn save-btn">Зберегти</button>
+    </div>
 </div>
