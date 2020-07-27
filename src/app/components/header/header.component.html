@@ -1,43 +1,44 @@
 <header>
-    <nav class="nav-extended">
-        <div class="nav-wrapper">
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger" id="burger">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul id="nav-mobile">
-                <li>
-                    <a routerLink="home" routerLinkActive="active-link">Головна</a>
-                 </li>
-                <li>
-                    <a routerLink="about" routerLinkActive="active-link">Про мене</a>
-                 </li>
-                <li>
-                    <a routerLink="videos" routerLinkActive="active-link">Відео</a>
-                 </li>
-                <li>
-                    <a routerLink="schedule" routerLinkActive="active-link">Календар</a>
-                 </li>
-                <li>
-                    <a routerLink="contact"  routerLinkActive="active-link">Контакт</a>
-                 </li>
-            </ul>
-        </div>
-    </nav>
-    <ul class="sidenav" id="mobile-demo" (click)="close()" #sidenav>
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger" id="burger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile">
         <li>
-            <a routerLink="home" routerLinkActive="active-link">Головна</a>
-         </li>
+          <a routerLink="home" routerLinkActive="active-link">Головна</a>
+        </li>
         <li>
-            <a routerLink="about" routerLinkActive="active-link">Про мене</a>
-         </li>
+          <a routerLink="about" routerLinkActive="active-link">Про мене</a>
+        </li>
         <li>
-            <a routerLink="videos" routerLinkActive="active-link">Відео</a>
-         </li>
+          <a routerLink="videos" routerLinkActive="active-link">Відео</a>
+        </li>
         <li>
-            <a routerLink="schedule" routerLinkActive="active-link">Календар</a>
-         </li>
+          <a routerLink="schedule" routerLinkActive="active-link">Календар</a>
+        </li>
         <li>
-            <a routerLink="contact"  routerLinkActive="active-link">Контакт</a>
-         </li>
+          <a routerLink="contact" routerLinkActive="active-link">Контакт</a>
+        </li>
       </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo" (click)="close()" #sidenav>
+    <li>
+      <a routerLink="home" routerLinkActive="active-link">Головна</a>
+    </li>
+    <li>
+      <a routerLink="about" routerLinkActive="active-link">Про мене</a>
+    </li>
+    <li>
+      <a routerLink="videos" routerLinkActive="active-link">Відео</a>
+    </li>
+    <li>
+      <a routerLink="schedule" routerLinkActive="active-link">Календар</a>
+    </li>
+    <li>
+      <a routerLink="contact" routerLinkActive="active-link">Контакт</a>
+    </li>
+  </ul>
+  <div class="divider"></div>
 </header>

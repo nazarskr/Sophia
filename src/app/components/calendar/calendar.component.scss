@@ -1,0 +1,79 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+#calendar {
+  @include flexColumnCenter();
+  padding-bottom: 50px;
+
+  .calendar-navigation {
+    margin-bottom: 30px;
+
+    .month-button {
+      display: flex;
+      align-items: center;
+      padding-top: 25px;
+
+      .current-month {
+        display: inline-block;
+        font-size: 20px;
+        line-height: 30px;
+        padding-right: 5px;
+        font-family: $head-font;
+        font-weight: bold;
+      }
+
+      .change-date {
+        cursor: pointer;
+        font-size: 35px;
+      }
+    }
+  }
+
+  .calendar-body {
+    width: 770px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .calendar-week {
+      width: 100px;
+      margin: 5px;
+      padding: 5px;
+      font-family: $head-font;
+      font-size: 20px;
+      text-align: center;
+
+      &.red-text {
+        color: red;
+      }
+    }
+
+    .calendar-cell {
+      width: 100px;
+      height: 70px;
+      margin: 5px;
+      padding: 5px;
+      font-family: $head-font;
+      font-size: 20px;
+      font-weight: bold;
+      border: 1px solid grey;
+      border-radius: 10px;
+
+      &.non-active-cell {
+        opacity: 0.4;
+      }
+
+      &.sunday {
+        border: 1px solid red;
+        opacity: 0.4;
+      }
+
+      &.active-cell {
+        &:hover {
+          background: $main-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

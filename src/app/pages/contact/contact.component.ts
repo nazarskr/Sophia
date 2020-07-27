@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../shared/interfaces';
 import { ContactService } from '../../shared/services/contact.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,8 @@ export class ContactComponent implements OnInit {
   contact: Contact;
   contacts: Contact[] = [];
   form: FormGroup;
-  constructor(public contactService: ContactService) { }
+  constructor(public contactService: ContactService,
+              private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -51,6 +53,7 @@ export class ContactComponent implements OnInit {
     await this.contactService.addContact(contact);
 
     this.form.reset();
-    MaterialService.toast('Повідомлення успішно відправлено!');
+    await MaterialService.toast('Повідомлення успішно відправлено!');
+    setTimeout(() => this.router.navigate(['/home']), 1000);
   }
 }
