@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { StudentsComponent } from './pages/students/students.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     ContactComponent,
     EmbedVideoComponent,
     CalendarComponent,
+    StudentsComponent,
   ],
   imports: [
     BrowserModule,
