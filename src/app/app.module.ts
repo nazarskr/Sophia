@@ -13,7 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmbedVideoComponent } from './pages/videos/embed-video/embed-video.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -37,6 +37,7 @@ import { StudentsComponent } from './pages/students/students.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     EmbedVideo.forRoot()

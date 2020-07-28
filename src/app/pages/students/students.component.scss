@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+#students-page {
+  padding: 30px 50px;
+  * {
+    font-family: $students-font;
+  }
+
+  .students-table {
+    thead > tr > th {
+      font-family: $head-font;
+    }
+
+    tbody > tr > td {
+      & > .students-textarea,
+      input[type=text]:not(.browser-default),
+      input[type=number]:not(.browser-default) {
+        margin: 0;
+        border: 0;
+      }
+    }
+  }
+}

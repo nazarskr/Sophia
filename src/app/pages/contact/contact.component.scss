@@ -1,6 +1,6 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
-#contact {
+#contact-page {
     @include flexColumnCenter;
     width: 70%;
     margin: 0 auto;
@@ -23,7 +23,7 @@
                 }
             }
             .input-field {
-                input[type=text]:focus, 
+                input[type=text]:focus,
                 input[type=email]:focus,
                 .materialize-textarea:focus:not([readonly]) {
                     border-bottom: 1px solid black;
@@ -34,7 +34,7 @@
                     letter-spacing: .5px;
                     font-size: 1.5rem;
                 }
-                input[type=text]:focus+label, 
+                input[type=text]:focus+label,
                 input[type=email]:focus+label,
                 .materialize-textarea:focus:not([readonly])+label {
                     color: black;
