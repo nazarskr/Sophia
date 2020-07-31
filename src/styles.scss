@@ -44,3 +44,9 @@ textarea {
 .save-btn {
   @include customButton(black, $green);
 }
+.add-btn {
+  @include customButton(black, $main-color);
+}
+.table-delete-btn {
+  @include tableButton(black, $red);
+}

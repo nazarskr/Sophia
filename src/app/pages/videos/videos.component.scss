@@ -1,6 +1,6 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
-#videos {
+#videos-page {
     #videosInner {
         @include flexRowCenter;
         flex-wrap: wrap;

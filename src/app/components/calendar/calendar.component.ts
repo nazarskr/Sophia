@@ -28,7 +28,6 @@ export class CalendarComponent implements OnInit, AfterViewInit {
 
   openModal (value) {
     this.dayModal.open();
-    console.log(value)
   }
 
   closeModal() {

@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+#students-page {
+  padding: 30px 50px;
+  * {
+    font-family: $students-font;
+  }
+
+  .students-table {
+    thead > tr > th {
+      font-family: $head-font;
+    }
+
+    tbody > tr > td {
+      &.student-name {
+        width: 210px;
+      }
+      &.student-age {
+        width: 50px;
+      }
+
+      & > .students-textarea,
+      input[type=text]:not(.browser-default),
+      input[type=number]:not(.browser-default) {
+        margin: 0;
+        border: 0;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}

@@ -23,3 +23,12 @@ export interface Workhour {
   booked: boolean;
   possible: boolean;
 }
+
+export interface Student {
+  _id?: any;
+  name: string;
+  age: number;
+  skills: string;
+  program: string;
+  plans: string;
+}
