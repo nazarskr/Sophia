@@ -8,28 +8,36 @@
       <th>Здобуті навики</th>
       <th>Програма</th>
       <th>Плани</th>
+      <th>Видалити</th>
     </tr>
     </thead>
 
     <tbody>
     <tr *ngFor="let student of students; let i = index">
       <td>{{i + 1}}</td>
-      <td>
+      <td class="student-name">
         <input placeholder="Введи ім'я" type="text" class="students-input" [ngModel]="student.name">
       </td>
-      <td>
+      <td class="student-age">
         <input placeholder="Введи вік" type="number" class="students-input" [ngModel]="student.age">
       </td>
       <td>
-        <textarea class="materialize-textarea students-textarea" [ngModel]="student.skills"></textarea>
+        <textarea placeholder="Напиши щось" class="materialize-textarea students-textarea" [ngModel]="student.skills"></textarea>
       </td>
       <td>
-        <textarea class="materialize-textarea students-textarea" [ngModel]="student.program"></textarea>
+        <textarea placeholder="Напиши щось" class="materialize-textarea students-textarea" [ngModel]="student.program"></textarea>
       </td>
       <td>
-        <textarea class="materialize-textarea students-textarea" [ngModel]="student.plans"></textarea>
+        <textarea placeholder="Напиши щось" class="materialize-textarea students-textarea" [ngModel]="student.plans"></textarea>
+      </td>
+      <td>
+        <button class="btn table-delete-btn" (click)="deleteStudent(i)">Видалити</button>
       </td>
     </tr>
     </tbody>
   </table>
+
+  <div>
+    <button class="btn add-btn" (click)="addStudent()">Додати учня</button>
+  </div>
 </div>

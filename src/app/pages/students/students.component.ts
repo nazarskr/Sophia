@@ -10,28 +10,28 @@ export class StudentsComponent implements OnInit {
 
   students: Student[] = [
     {
-      name: 'Софія',
+      name: 'Софія 1',
       age: 6,
       skills: 'Грає добре, співає не дуже',
       program: 'Зірочка тричі на день',
       plans: 'Хочу, щоб грав як Шопен'
     },
     {
-      name: 'Софія',
+      name: 'Софія 2',
       age: 6,
       skills: 'Грає добре, співає не дуже',
       program: 'Зірочка тричі на день',
       plans: 'Хочу, щоб грав як Шопен'
     },
     {
-      name: 'Софія',
+      name: 'Софія 3',
       age: 6,
       skills: 'Грає добре, співає не дуже',
       program: 'Зірочка тричі на день',
       plans: 'Хочу, щоб грав як Шопен'
     },
     {
-      name: 'Софія',
+      name: 'Софія 4',
       age: 6,
       skills: 'Грає добре, співає не дуже',
       program: 'Зірочка тричі на день',
@@ -41,6 +41,21 @@ export class StudentsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addStudent() {
+    const newStudent = {
+      name: '',
+      age: 0,
+      skills: '',
+      program: '',
+      plans: ''
+    }
+    this.students.push(newStudent);
+  }
+
+  deleteStudent(index) {
+    this.students.splice(index, 1);
   }
 
 }
